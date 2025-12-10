@@ -1,0 +1,46 @@
+[
+    {
+        "name" : "Arthritis",
+        "definition" : "Arthritis is the inflammation of a joint. If equine arthritis becomes chronic, it can lead to damage and deterioration of the surrounding soft tissues, cartilage, and bone. This is a non-reversible and progressive disease that is found more often nowadays as horse lifespans are lengthening with quality healthcare.",
+        "medical_attention" : "Yes",
+        "severity" : "Medium to High",
+        "causes" : "Sport horses are also more prone to trauma to or near a joint, which can encourage bony changes in the area. This leads to damage or compression of the joint capsule, and excessive force on the cartilage over time, all of which can cause inflammation.",
+        "symptoms" : "Stiffness, swelling or heat around joints, pain or lameness, and “popping” or cracking noises during movement.",
+        "diagnosis" : "Veterinarians can perform a thorough lameness exam. This will include watching your horse walk, trot, and canter for a baseline, then perform flexed examinations. Once an area of concern is identified, your veterinarian will likely take X-rays of the joint to evaluate the level of involvement and bony changes present. In complex cases, advanced imaging such as MRI may be required.",
+        "treatment" : "Arthritis relief for horses starts with pain management. Daily moderate exercise will help keep your horse active and comfortable. Being stall bound often increases stiffness.",
+        "recovery" : "While there is no cure for this degenerative disease process, there are many ways to manage pain and lengthen the athletic career of your horse."
+    },
+    {
+        "name" : "Laminitis",
+        "definition" : "Laminitis is a painful and debilitating hoof condition that results from a variety of nutritional, health, and environmental factors. There are three stages: developmental, acute, and chronic. In severe cases, the horse's pedal bone in the hoof can penetrate the sole of the foot causing severe pain.",
+        "medical_attention" : "Yes",
+        "severity" : "Extreme",
+        "causes" : "Diseases associated with inflammation, endocrine (hormone) disease, or mechanical overload - supporting limb laminitis (SLL).",
+        "symptoms" : "Lameness affecting most commonly at least two limbs, the horse leans back onto its heels to take the weight off the painful toe area, the lameness is worse when the horse walks on hard ground or turns, shifting weight between feet when resting, and pain with use of hoof testers at the point of frog on the foot.",
+        "diagnosis" : "A laminitis diagnosis is usually based on the clinical signs being displayed. X-rays may be taken if there is concern that the pedal bone has sunk or rotated, or if the animal is not improving despite appropriate therapy. Blood tests may be performed in cases where an underlying endocrine disease is suspected.",
+        "treatment" : "Various medicines can be given to control the pain including non-steroidal anti-inflammatory drugs (NSAIDs) such as phenylbutazone or flunixin and opiates like morphine and pethidine. Many animals with laminitis will need to be euthanized. Foot support is a vital part of the treatment to help to limit movement of the pedal bone and to reduce the pain experienced by the horse. Box rest along with dietary changes are important factors. Rather than grass, horses should have poor quality hay and no or minimal concentrates.",
+        "recovery" : "It takes weeks to months for a horse to recover from laminitis."
+    },
+    {
+        "name" : "Colic",
+        "definition" : "Colic is a general term referring to abdominal pain, which could have a variety of causes. It is a common problem that can affect horses of all ages. Most cases turn out to be gastrointestinal in origin but it can originate in other organs, such as the kidneys, liver or spleen. Pain can also be from the reproductive organs or be the result of problems like bleeding into the abdomen, rupture of urinary bladder or infection.",
+        "medical_attention" : "Yes",
+        "severity" : "Medium to Extreme",
+        "causes" : "Changes in diet (grain or hay), changes in routine or exercise, weather changes, high parasite infestation, sand ingestion, increase in body weight, decrease in water intake, and dental issues.",
+        "symptoms" : "Restlessness, loss of appetite, pawing at the ground or rolling on the ground, looking at or kicking the abdomen, lying flat out or stretching, grinding the teeth, sweating, posturing to urinate, and elevated heart rate (in some cases).",
+        "diagnosis" : "Assessment is likely to involve rectal examination, ultrasound scan and blood work, as well as palpation of areas of concern. Vets may pass a tube into the stomach or take a sample of fluid from the abdomen to help make in effective diagnosis. This will enable them to quickly decide if your horse needs surgical intervention or is likely to recover without surgery.",
+        "treatment" : "Depending on the cause of the pain and how persistent it is, the horse may be treated medically or surgically. In many cases treatment will just involve  giving fluids and pain relief. In cases of displacement, where part of intestine has shifted out of its normal position but blood is still flowing to the intestine, either medical or surgical treatment might be appropriate.",
+        "recovery" : "Recovery after colic depends on the severity and medical reason for the colic episode. If the colic episode was minor and able to be resolved with minor medical treatment on the farm, the horse may be back to their normal lifestyle within a few days. If the horse required hospitalization and surgery, it could take weeks or months to recover."
+    },
+    {
+        "name" : "Gastric Ulcers",
+        "definition" : "A gastric ulcer is an erosion or sore on the lining of the horse's stomach. While the condition can be found in all breeds, it especially affects performance horses.",
+        "medical_attention" : "Yes",
+        "severity" : "Medium to Extreme",
+        "causes" : "When horses are fed two times per day, which is common in many boarding situations, the stomach is subjected to a prolonged period without feed to neutralize the acid. In addition, high-grain diets produce volatile fatty acids that can also contribute to the development of ulcers. Physical and environmental stressors such as transport stress and stall confinement are additional risk factors.",
+        "symptoms" : "Poor appetite, dullness, attitude changes, decreased performance, reluctance to train, poor body condition, poor hair coat, weight loss, low grade colic, and girthiness",
+        "diagnosis" : "Gastric ulcers can only be diagnosed definitively through gastric endoscopy. This procedure is easy to perform, is minimally invasive, and allows for the evaluation of the esophagus, stomach, and small intestine.",
+        "treatment" : "Omeprazole is available as a paste formulation and has been very effective in preventing and treating gastric ulceration in all types of horses. Although the commercial paste is expensive, it is very effective and requires administration once a day.",
+        "recovery" : "The prognosis for affected horses is generally good. Gastric ulcers can be treated and prevented relatively easily. Most heal within four weeks of treatment."
+    }
+]

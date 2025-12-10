@@ -17,7 +17,7 @@
                         <path d="M28.2222 1L36 8.77778M32.1111 4.88889L23.3611 13.6389M17.5278 7.80556L29.1944 19.4722M27.25 17.5278L14.6111 30.1667H6.83333M6.83333 30.1667V22.3889L19.4722 9.75M6.83333 30.1667L1 36M9.75 19.4722L12.6667 22.3889M15.5833 13.6389L18.5 16.5556" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
-                <span class="messageText"><span class="messageTextBold">Bucephalus</span> is due for an annual Equine Influenza vaccine on 12/3.</span>
+                <span class="messageText"><span class="messageTextBold">Bucephalus</span> is due for an annual Equine Influenza vaccine on <span class="messageTextBold">12/3</span>.</span>
             </div>
             <div class="message alertMessage red">
                 <div class="iconBox">
@@ -83,7 +83,9 @@
             </div>
             <div class="newsInfo">
                 <p class="newsDate">December 8, 2025</p>
-                <p class="newsText">Dates and Locations Announced for 2026 USEF Combined Driving National Championships</p>
+                    <a href="https://www.usef.org/media/press-releases/dates-locations-announced-for-2026-usef" target="_blank" rel="noopener noreferrer" class="newsText">
+                        Dates and Locations Announced for 2026 USEF Combined Driving National Championships
+                    </a>
                 <p class="newsSource">US Equestrian Communications</p>
             </div>
         </div>
@@ -94,7 +96,9 @@
             </div>
             <div class="newsInfo">
                 <p class="newsDate">December 1, 2025</p>
-                <p class="newsText">Valegro And Uthopia, British Dressage Stars, Have Died</p>
+                <a href="https://www.chronofhorse.com/article/valegro-and-uthopia-british-dressage-stars-have-died/" target="_blank" rel="noopener noreferrer" class="newsText">
+                    Valegro And Uthopia, British Dressage Stars, Have Died
+                </a>
                 <p class="newsSource">The Chronicle of the Horse</p>
             </div>
         </div>
@@ -105,7 +109,9 @@
             </div>
             <div class="newsInfo">
                 <p class="newsDate">November 21, 2025</p>
-                <p class="newsText">EHV-1 Update And Biosecurity Reminders From US Equestrian; As of November 21, The EHV-1 Outbreak Does Not Involve USEF-Licensed Events</p>
+                <a href="https://www.usef.org/media/press-releases/ehv-1-update-biosecurity-reminders-from-us" target="_blank" rel="noopener noreferrer" class="newsText">
+                    EHV-1 Update And Biosecurity Reminders From US Equestrian; As of November 21, The EHV-1 Outbreak Does Not Involve USEF-Licensed Events
+                </a>
                 <p class="newsSource">US Equestrian Communications</p>
             </div>
         </div>
@@ -114,7 +120,31 @@
 
 <style>
 
+#homePage {
+    display: flex;
+    width: 100%;
+    padding: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    height: auto;
+    min-height: 85vh;
+}
 #info {
+    display: flex;
+    height: 500px;
+    padding: 10px 0;
+    align-items: flex-start;
+    justify-content: flex-start; 
+    gap: 20px;
+    flex-shrink: 0;
+    align-self: stretch;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+#newsFrame {
     display: flex;
     padding: 10px 0;
     align-items: flex-start;
@@ -125,34 +155,35 @@
 
 #alerts {
     display: flex;
-    width: 700px;
+    width: 50%;
     padding: 15px;
     flex-direction: column;
     align-items: center;
     gap: 15px;
     align-self: stretch;
     border-radius: 20px;
-    background: rgba(202, 202, 202, 0.30);
+    background: rgba(90, 90, 90, .7);
+    
 }
 
 #status {
     display: flex;
-    width: 1120px;
+    width: 50%;
     padding: 15px;
     flex-direction: column;
     align-items: center;
     gap: 15px;
     align-self: stretch;
     border-radius: 20px;
-    background: rgba(202, 202, 202, 0.30);
+    background: rgba(90, 90, 90, .7);
 }
 
 .header {
     display: flex;
-    width: 650px;
-    padding-bottom: 8px;
+    padding: 0 0px 8px 0px;
     justify-content: center;
     align-items: center;
+    align-self: stretch;
     border-bottom: 3px solid #FFF;
 }
 
@@ -185,7 +216,7 @@
 
 .message {
     display: flex;
-    height: 90px;
+    height: 80px;
     padding: 10px 18px;
     align-items: center;
     gap: 10px;
@@ -193,11 +224,11 @@
 }
 
 .statusMessage {
-    width: 1070px;
+    width: 100%;
 }
 
 .alertMessage {
-    width: 650px;
+    width: 100%;
 }
 
 .red {
@@ -212,65 +243,45 @@
     background: linear-gradient(91deg, #28384B 0%, #3D546E 100%);
 }
 
-#homePage{
-    display: flex;
-    width: 1920px;
-    height: 1100px;
-    padding: 40px;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-shrink: 0;
-}
-
-#newsFrame {
-    display: flex;
-    height: 350px;
-    padding: 10px 0;
-    align-items: flex-start;
-    gap: 20px;
-    flex-shrink: 0;
-    align-self: stretch;
-    }
-
 .newsTemplate {
     display: flex;
-    width: 600px;
     padding: 10px;
+    justify-content: center;
     align-items: center;
     gap: 10px;
+    flex: 1 0 0;
     align-self: stretch;
     border-radius: 20px;
-    background: #CACACA;
+    background: #afafaf;
 }
 
 .newsImageDiv {
+    flex: 0 0 35%;
     display: flex;
-    width: 260px;
-    flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    flex-shrink: 0;
+    min-width: 0;
 }
 
-img {
-    width: 230px;
-    height: 310px;
-    flex-shrink: 0;
-    aspect-ratio: 23/31;
+.newsImageDiv img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 23 / 31;
     border-radius: 15px;
+    object-fit: cover;
 }
 
 .newsInfo {
     display: flex;
-    width: 310px;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    flex-shrink: 0;
+    flex: 1 0 0;
     align-self: stretch;
 }
 
-.newsDate {
+.newsDate{
     display: flex;
     height: 31px;
     flex-direction: column;
@@ -281,17 +292,6 @@ img {
     font-size: 20px;
     font-style: normal;
     font-weight: 200;
-    line-height: normal;
-}
-
-.newsText {
-    flex: 1 0 0;
-    align-self: stretch;
-    color: #000;
-    font-family: Inter;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 300;
     line-height: normal;
 }
 
@@ -308,4 +308,16 @@ img {
     font-weight: 200;
     line-height: normal;
 }
+
+.newsText {
+    flex: 1 0 0;
+    align-self: stretch;
+    color: #000;
+    font-family: Inter;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
 </style>

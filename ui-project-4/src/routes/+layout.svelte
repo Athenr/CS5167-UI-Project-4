@@ -2,6 +2,9 @@
 	import { goto } from '$app/navigation';
 	import "../global.css";
 	import favicon from "$lib/assets/favicon.svg";
+	import SiteLogo from "$lib/assets/SiteLogo.png";
+
+	let isDarkMode = true;
 
 	function gotoHome() {
         goto('/'); 
@@ -11,8 +14,17 @@
         goto('/horses'); 
     }
 
+	function gotoEquiPedia() {
+        goto('/equipedia'); 
+    }
+
 	function gotoVetScanner() {
         goto('/vetScanner'); 
+    }
+
+	function changeThemeMode() {
+        isDarkMode = !isDarkMode;
+		document.body.classList.toggle('light-mode', !isDarkMode);
     }
 
   	let { children } = $props();
@@ -22,61 +34,38 @@
   	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<header>
-  <div id="headerBackground">
-    <div id="title" on:click={gotoHome}>
-      <img id="logo" alt="logo"/>
-      StablEye
-    </div>
+<div id="headerBackground">
+	<div id="title" on:click={gotoHome}>
+		<div id="logoDiv">
+			<img id="logo" src={SiteLogo} alt="logo"/>
+		</div>
+		StablEye
+	</div>
 
-    <div id="navBar">
-      <div class="navItem" on:click={gotoHorses}>Horses</div>
-      <div class="navItem" on:click={gotoVetScanner}>VetScanner</div>
-    </div>
+	<div id="navBar">
+		<div class="navItem" on:click={gotoHorses}>Horses</div>
+		<div class="navItem" on:click={gotoEquiPedia}>EquiPedia</div>
+		<div class="navItem" on:click={gotoVetScanner}>VetScanner</div>
+	</div>
 
-    <div id="profile">
-      <div id="profileImageDiv">
-        <img id="profileImage" alt="profile"/>
-      </div>
-      AdminUser12
-    </div>
+	<div id="profile">
+		<div id="profileImageDiv">
+		<img id="profileImage" src={SiteLogo} alt="profile"/>
+		</div>
+		AdminUser12
+	</div>
 
-    <div id="logout">
-      <div id="themeChange">
-        <div id="themeChangeIconBox">
-          <svg
-            width="35"
-            height="36"
-            viewBox="0 0 35 36"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            id="themeChangeIconBox"
-          >
-            <path
-              d="M17.5 22.5C18.7153 22.5 19.7483 22.0625 20.599 21.1875C21.4497 20.3125 21.875 19.25 21.875 18C21.875 16.75 21.4497 15.6875 20.599 14.8125C19.7483 13.9375 18.7153 13.5 17.5 13.5C16.2848 13.5 15.2518 13.9375 14.4011 14.8125C13.5504 15.6875 13.125 16.75 13.125 18C13.125 19.25 13.5504 20.3125 14.4011 21.1875C15.2518 22.0625 16.2848 22.5 17.5 22.5ZM17.5 25.5C15.4827 25.5 13.7631 24.7688 12.3412 23.3063C10.9193 21.8438 10.2084 20.075 10.2084 18C10.2084 15.925 10.9193 14.1562 12.3412 12.6938C13.7631 11.2312 15.4827 10.5 17.5 10.5C19.5174 10.5 21.237 11.2312 22.6589 12.6938C24.0808 14.1562 24.7917 15.925 24.7917 18C24.7917 20.075 24.0808 21.8438 22.6589 23.3063C21.237 24.7688 19.5174 25.5 17.5 25.5ZM7.29171 19.5H1.45837V16.5H7.29171V19.5ZM33.5417 19.5H27.7084V16.5H33.5417V19.5ZM16.0417 7.5V1.5H18.9584V7.5H16.0417ZM16.0417 34.5V28.5H18.9584V34.5H16.0417ZM9.33337 11.625L5.65108 7.9875L7.72921 5.775L11.2292 9.525L9.33337 11.625ZM27.2709 30.225L23.7344 26.4375L25.6667 24.375L29.349 28.0125L27.2709 30.225ZM23.698 9.6L27.2344 5.8125L29.3855 7.95L25.7396 11.55L23.698 9.6ZM5.61462 28.05L9.29692 24.4125L11.3021 26.4L7.76567 30.1875L5.61462 28.05Z"
-              fill="#FEF7FF"
-            />
-
-            <svg
-              width="33"
-              height="33"
-              viewBox="0 0 33 33"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              id="themeChangeIcon"
-            >
-              <path
-                d="M16.0417 21C17.2569 21 18.2899 20.5625 19.1406 19.6875C19.9913 18.8125 20.4167 17.75 20.4167 16.5C20.4167 15.25 19.9913 14.1875 19.1406 13.3125C18.2899 12.4375 17.2569 12 16.0417 12C14.8264 12 13.7934 12.4375 12.9427 13.3125C12.092 14.1875 11.6667 15.25 11.6667 16.5C11.6667 17.75 12.092 18.8125 12.9427 19.6875C13.7934 20.5625 14.8264 21 16.0417 21ZM16.0417 24C14.0243 24 12.3047 23.2688 10.8828 21.8063C9.46094 20.3438 8.75 18.575 8.75 16.5C8.75 14.425 9.46094 12.6562 10.8828 11.1938C12.3047 9.73125 14.0243 9 16.0417 9C18.059 9 19.7786 9.73125 21.2005 11.1938C22.6224 12.6562 23.3333 14.425 23.3333 16.5C23.3333 18.575 22.6224 20.3438 21.2005 21.8063C19.7786 23.2688 18.059 24 16.0417 24ZM5.83333 18H0V15H5.83333V18ZM32.0833 18H26.25V15H32.0833V18ZM14.5833 6V0H17.5V6H14.5833ZM14.5833 33V27H17.5V33H14.5833ZM7.875 10.125L4.19271 6.4875L6.27083 4.275L9.77083 8.025L7.875 10.125ZM25.8125 28.725L22.276 24.9375L24.2083 22.875L27.8906 26.5125L25.8125 28.725ZM22.2396 8.1L25.776 4.3125L27.9271 6.45L24.2812 10.05L22.2396 8.1ZM4.15625 26.55L7.83854 22.9125L9.84375 24.9L6.30729 28.6875L4.15625 26.55Z"
-                fill="#FEF7FF"
-              />
-            </svg>
-          </svg>
-        </div>
-      </div>
-      <button id="logoutButton"> Logout </button>
-    </div>
-  </div>
-</header>
+	<div id="logout">
+		<div id="themeChange" on:click={changeThemeMode}>
+			<div id="themeChangeIconBox">
+				<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+					<path d="M14 17.5C14.9722 17.5 15.7986 17.1597 16.4791 16.4792C17.1597 15.7986 17.5 14.9722 17.5 14C17.5 13.0278 17.1597 12.2014 16.4791 11.5208C15.7986 10.8403 14.9722 10.5 14 10.5C13.0277 10.5 12.2013 10.8403 11.5208 11.5208C10.8402 12.2014 10.5 13.0278 10.5 14C10.5 14.9722 10.8402 15.7986 11.5208 16.4792C12.2013 17.1597 13.0277 17.5 14 17.5ZM14 19.8333C12.3861 19.8333 11.0104 19.2646 9.87288 18.1271C8.73538 16.9896 8.16663 15.6139 8.16663 14C8.16663 12.3861 8.73538 11.0104 9.87288 9.87291C11.0104 8.73541 12.3861 8.16666 14 8.16666C15.6138 8.16666 16.9895 8.73541 18.127 9.87291C19.2645 11.0104 19.8333 12.3861 19.8333 14C19.8333 15.6139 19.2645 16.9896 18.127 18.1271C16.9895 19.2646 15.6138 19.8333 14 19.8333ZM5.83329 15.1667H1.16663V12.8333H5.83329V15.1667ZM26.8333 15.1667H22.1666V12.8333H26.8333V15.1667ZM12.8333 5.83332V1.16666H15.1666V5.83332H12.8333ZM12.8333 26.8333V22.1667H15.1666V26.8333H12.8333ZM7.46663 9.04166L4.52079 6.21249L6.18329 4.49166L8.98329 7.40832L7.46663 9.04166ZM21.8166 23.5083L18.9875 20.5625L20.5333 18.9583L23.4791 21.7875L21.8166 23.5083ZM18.9583 7.46666L21.7875 4.52082L23.5083 6.18332L20.5916 8.98332L18.9583 7.46666ZM4.49163 21.8167L7.43746 18.9875L9.04163 20.5333L6.21246 23.4792L4.49163 21.8167Z" fill="#FEF7FF"/>
+				</svg>
+			</div>
+		</div>
+		<button id="logoutButton"> Logout </button>
+	</div>
+</div>
 
 <main>
   <div id="mainPage">
@@ -85,126 +74,129 @@
 </main>
 
 <style>
-  * {
-    color: #fff;
-    font-family: Inter;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-  }
-
-  .navItem {
-    display: flex;
-    height: 50px;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-family: Inter;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-  }
-
-  #mainPage {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-shrink: 0;
-    height: calc(100vh - 100px);
-  }
-
-  #headerBackground {
-    display: flex;
-    width: 100%;
-    padding: 10px;
-    align-items: center;
-    gap: 20px;
-    background: #0077b6;
-  }
-
-  #navBar {
-    display: flex;
-    flex-grow: 1;
-    flex-shrink: 1;
-	
-    padding: 10px 0;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 90px;
-	
-  }
-
-  #title {
-    display: flex;
-    width: 350px;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 1;
-	color: #FFF;
-	font-family: "Baloo 2";
-	font-size: 54px;
+* {
+	color: #fff;
+	font-family: Inter;
+	font-size: 30px;
 	font-style: normal;
 	font-weight: 800;
 	line-height: normal;
-  }
+}
 
-  #profile {
-    display: flex;
-    width: 350px;
-    align-items: center;
-    gap: 10px;
+.navItem {
+	display: flex;
+	height: 50px;
+	justify-content: center;
+	align-items: center;
+	color: #FFF;
+	font-family: Inter;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 800;
+	line-height: normal;
+}
+
+#mainPage {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	align-items: flex-start;
+	flex-shrink: 0;
+	height: calc(100vh - 100px);
+}
+
+#headerBackground {
+	display: flex;
+	width: 100%;
+	height: 70px;
+	padding: 10px;
+	align-items: center;
+	gap: 20px;
+	background: #0077B6;
+}
+
+#navBar {
+	display: flex;
+	width: 45%;
+	padding: 10px 0;
+	justify-content: center;
+	align-items: center;
+	gap: 90px;
+	flex-shrink: 0;
+	align-self: stretch;
+
+}
+
+#title {
+	width: 20%;
+	display: flex;
+	height: 70px;
+	align-items: center;
+	gap: 10px;
+	flex-shrink: 0;
+	color: #FFF;
+	font-family: "Baloo 2";
+	font-size: 48px;
+	font-style: normal;
+	font-weight: 800;
+	line-height: normal;
+}
+
+#profile {
+	display: flex;
+	width: 15%;
+	align-items: center;
+	gap: 10px;
+	flex-shrink: 0;
+	align-self: stretch;
 	color: #FFF;
 	font-family: Inter;
 	font-size: 25px;
 	font-style: normal;
 	font-weight: 500;
 	line-height: normal;
-    flex-shrink: 1;
-  }
+}
 
-  #logout {
-    display: flex;
-    width: 240px;
-    height: 60px;
-    padding: 5px 0;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    flex-shrink: 1;
-  }
+#logout {
+	display: flex;
+	width: 15%;
+	padding: 5px 0;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+	flex-shrink: 0;
+	align-self: stretch;
+}
 
-  #profileImage {
-    width: 70px;
-    height: 70px;
-    flex-shrink: 0;
-    aspect-ratio: 1/1;
-    border-radius: 50px;
-    background: url(../lib/assets/SiteLogo.png) lightgray 50% / cover no-repeat;
-  }
+#profileImage {
+	width: 50px;
+	height: 50px;
+	flex-shrink: 0;
+	aspect-ratio: 1/1;
+	border-radius: 50px;
+}
 
-  #profileImageDiv {
-    display: flex;
-    width: 70px;
-    height: 70px;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-  }
+#profileImageDiv {
+	display: flex;
+	width: 50px;
+	height: 50px;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+	aspect-ratio: 1/1;
+}
 
-  #logoutButton {
-    display: flex;
-    width: 120px;
-    height: 55px;
-    padding: 5px 0;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    border-radius: 30px;
-    border: 4px solid #fff;
-    background: #ff6b6b;
+#logoutButton {
+	display: flex;
+	width: 120px;
+	padding: 5px 0;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+	align-self: stretch;
+	border-radius: 30px;
+	border: 4px solid #FFF;
+	background: #FF6B6B;
 	color: #FFF;
 	text-align: center;
 	font-family: Inter;
@@ -212,42 +204,49 @@
 	font-style: normal;
 	font-weight: 500;
 	line-height: normal;
-  }
+}
 
-  #themeChange {
-    display: flex;
-    width: 55px;
-    height: 55px;
-    padding: 16px 30px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-    border-radius: 30px;
-    border: 4px solid #fff;
-    background: #0077b6;
-  }
+#themeChange {
+	display: flex;
+	width: 40px;
+	padding: 16px 16px;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	flex-shrink: 0;
+	align-self: stretch;
+	aspect-ratio: 1/1;
+	border-radius: 30px;
+	border: 4px solid #FFF;
+	background: #0077B6;
+}
 
-  #themeChangeIconBox {
-    width: 35px;
-    height: 36px;
-    flex-shrink: 0;
-  }
+#themeChangeIconBox {
+	width: 28px;
+	height: 28px;
+	flex-shrink: 0;
+	aspect-ratio: 1/1;
+}
 
-  #themeChangeIcon {
-    width: 32.083px;
-    height: 33px;
-    fill: var(--Schemes-Background, #fef7ff);
-  }
+#themeChangeIcon {
+	width: 25.667px;
+	height: 25.667px;
+	fill: var(--Schemes-Background, #fef7ff);
+}
 
-  #logo {
-    display: flex;
-    width: 80px;
-    height: 80px;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    border-radius: 15px;
-    background: url(../lib/assets/SiteLogo.png) lightgray 50% / cover no-repeat;
-  }
+#logoDiv {
+	display: flex;
+	width: 70px;
+	height: 70px;
+	justify-content: center;
+	align-items: center;
+	aspect-ratio: 1/1;
+}
+
+#logo {
+	width: 70px;
+	height: 70px;
+	flex-shrink: 0;
+	aspect-ratio: 1/1;
+}
 </style>

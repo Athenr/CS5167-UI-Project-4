@@ -17,8 +17,11 @@ body {
     line-height: normal;
 
     height: 100%;
-    
-    overflow-y: auto;
+    overflow: hidden;
+}
+
+body.light-mode {
+    background: #ffffff;
 }
 
 *, *::before, *::after {
