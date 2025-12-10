@@ -132,7 +132,7 @@
     align-self: stretch;
     color: #FFF;
     font-family: Inter;
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
