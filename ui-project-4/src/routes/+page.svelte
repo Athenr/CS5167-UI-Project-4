@@ -215,10 +215,11 @@
 #homePage{
     display: flex;
     width: 1920px;
-    height: 1200px;
+    height: 1100px;
+    padding: 40px;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
+    flex-shrink: 0;
 }
 
 #newsFrame {
